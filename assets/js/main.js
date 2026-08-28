@@ -20,20 +20,6 @@
     revealed.forEach(function (el) { el.classList.add('in'); });
   }
 
-  /* results — show / hide earlier seasons */
-  var toggle = document.querySelector('[data-toggle-earlier]');
-  if (toggle) {
-    toggle.addEventListener('click', function () {
-      var open = toggle.getAttribute('aria-expanded') === 'true';
-      document.querySelectorAll('[data-earlier]').forEach(function (g) {
-        g.hidden = open;
-        if (!open) { g.classList.add('in'); }
-      });
-      toggle.setAttribute('aria-expanded', String(!open));
-      toggle.textContent = open ? 'Show earlier seasons' : 'Hide earlier seasons';
-    });
-  }
-
   /* sticky index — active section highlight */
   var links = Array.prototype.slice.call(document.querySelectorAll('.index__links a'));
   var sections = links
