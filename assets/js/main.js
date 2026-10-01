@@ -75,4 +75,56 @@
         .finally(function () { btn.disabled = false; });
     });
   }
+
+  /* gallery lightbox */
+  var lb = document.getElementById('lightbox');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.gallery__item'));
+  if (lb && items.length) {
+    var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption');
+    var cur = 0, lastFocus = null;
+    var show = function (i) {
+      cur = (i + items.length) % items.length;
+      var it = items[cur];
+      lbImg.src = it.getAttribute('href');
+      lbImg.alt = it.querySelector('img').alt;
+      lbCap.textContent = it.getAttribute('data-caption') || '';
+    };
+    var open = function (i) { lastFocus = document.activeElement; show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; lb.querySelector('.lightbox__close').focus(); };
+    var close = function () { lb.hidden = true; document.body.style.overflow = ''; lbImg.removeAttribute('src'); if (lastFocus) lastFocus.focus(); };
+    items.forEach(function (it, i) {
+      it.addEventListener('click', function (e) { e.preventDefault(); open(i); });
+    });
+    lb.querySelector('.lightbox__close').addEventListener('click', close);
+    lb.querySelector('.lightbox__prev').addEventListener('click', function () { show(cur - 1); });
+    lb.querySelector('.lightbox__next').addEventListener('click', function () { show(cur + 1); });
+    lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+    document.addEventListener('keydown', function (e) {
+      if (lb.hidden) return;
+      if (e.key === 'Escape') close();
+      else if (e.key === 'ArrowLeft') show(cur - 1);
+      else if (e.key === 'ArrowRight') show(cur + 1);
+    });
+  }
+})();
+
+/* explainer video: autoplay (muted, looping) when on screen, pause when off screen */
+(function () {
+  var v = document.querySelector('.explain__video video');
+  if (!v) return;
+  v.muted = true;
+  v.defaultMuted = true;
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+  var userPaused = false;
+  v.addEventListener('pause', function () { if (v.dataset.auto !== '1') userPaused = true; });
+  v.addEventListener('play', function () { userPaused = false; });
+  function play() { v.dataset.auto = '1'; var p = v.play(); if (p && p.catch) p.catch(function () {}); setTimeout(function () { v.dataset.auto = ''; }, 50); }
+  function pause() { v.dataset.auto = '1'; v.pause(); setTimeout(function () { v.dataset.auto = ''; }, 50); }
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (e.isIntersecting) { if (!userPaused) play(); } else { pause(); }
+      });
+    }, { threshold: 0.35 }).observe(v);
+  } else { play(); }
 })();
