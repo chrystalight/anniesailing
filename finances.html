@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funding + Finances — Annie Balasubramanian</title>
+<meta name="description" content="Where the money goes: Annie Balasubramanian's campaign spending so far, by category, with an example expense list.">
+<link rel="canonical" href="https://anniesailing.ca/finances.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23C81E29'/%3E%3Ctext x='16' y='23' font-family='Georgia,serif' font-size='20' fill='%23F4F1E8' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,700;1,9..144,800&family=Archivo:wght@400;500&family=Spline+Sans+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .fin h2{font-family:var(--f-display);font-weight:700;font-size:clamp(1.7rem,2.4vw + 1rem,2.6rem);letter-spacing:-.02em;line-height:1.1;margin:4.5rem 0 .6rem}
+  .fin__lede{max-width:56ch;color:var(--ink-soft);margin-top:1rem}
+  .fin__sample{margin:1.6rem 0 0;padding:1rem 1.2rem;border:2px dashed var(--red);color:var(--red);font:700 .85rem/1.5 var(--f-mono);letter-spacing:.06em;text-transform:uppercase}
+  .fin__sample[hidden]{display:none}
+  .fin__sub{color:var(--ink-soft);max-width:60ch;margin-bottom:1.6rem}
+  .sumrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:2rem}
+  .sumrow div{background:var(--paper);padding:1.4rem 1.4rem 1.2rem}
+  .sumrow dt{font:500 .72rem/1.4 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+  .sumrow dd{font-family:var(--f-display);font-weight:700;font-size:clamp(1.8rem,3vw,2.5rem);letter-spacing:-.02em;margin-top:.3rem}
+  .bbar{margin-bottom:1.3rem}
+  .bbar__top{display:flex;justify-content:space-between;gap:1rem;margin-bottom:.45rem;flex-wrap:wrap}
+  .bbar__name{font-weight:500;display:flex;align-items:center;gap:.55rem}
+  .bbar__name i,.lg i,.chip i,.legend i{display:inline-block;width:.8rem;height:.8rem;border-radius:50%;flex:none}
+  .bbar__nums{font:500 .9rem/1.4 var(--f-mono)}
+  .bbar__nums em{font-style:normal;color:var(--ink-soft)}
+  .bbar__track{height:.7rem;background:var(--paper-2);border-radius:99px;overflow:hidden}
+  .bbar__fill{height:100%;border-radius:99px}
+  #month-chart svg{width:100%;height:auto;max-width:760px;display:block}
+  #month-chart .grid{stroke:var(--rule)}
+  #month-chart .tick{fill:var(--ink-soft);font:400 11px var(--f-mono)}
+  #month-chart .tot{fill:var(--ink);font:700 11px var(--f-mono)}
+  .legend{display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;margin-top:1rem;font-size:.9rem;list-style:none}
+  .legend li{display:flex;align-items:center;gap:.5rem}
+  .piewrap{display:grid;grid-template-columns:minmax(220px,340px) 1fr;gap:clamp(1.5rem,4vw,3.5rem);align-items:center}
+  #pie svg{width:100%;height:auto;display:block}
+  .slice{stroke:var(--paper);stroke-width:2}
+  #pie-legend{list-style:none}
+  #pie-legend li{display:grid;grid-template-columns:auto 1fr auto auto;gap:.8rem;align-items:center;padding:.8rem 0;border-bottom:1px solid var(--rule)}
+  .lg__name{font-weight:500}
+  .lg__pct{font-family:var(--f-display);font-weight:700;font-size:1.4rem;min-width:3.2rem;text-align:right}
+  .lg__amt{font:400 .85rem/1 var(--f-mono);color:var(--ink-soft);min-width:5rem;text-align:right}
+  @media (max-width:700px){.piewrap{grid-template-columns:1fr}}
+  .tablewrap{overflow-x:auto;border:1px solid var(--rule)}
+  table.rcpt{width:100%;border-collapse:collapse;font-size:.95rem;min-width:560px}
+  .rcpt th{font:500 .72rem/1.4 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);text-align:left;padding:.9rem 1rem;border-bottom:1px solid var(--rule);background:var(--paper-2)}
+  .rcpt td{padding:.8rem 1rem;border-bottom:1px solid var(--rule)}
+  .rcpt .num,.rcpt th.num{text-align:right;font-family:var(--f-mono)}
+  .rcpt tfoot td{font-weight:700;border-bottom:0;background:var(--paper-2)}
+  .chip{display:inline-flex;align-items:center;gap:.45rem}
+  .muted{color:var(--ink-soft)}
+  .rcpt a{color:var(--red)}
+  .tabs{display:flex;gap:.5rem;margin-bottom:1.2rem;flex-wrap:wrap}
+  .tabs button{font:500 .8rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;padding:.8em 1.2em;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer}
+  .tabs button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+  [hidden]{display:none!important}
+  .fin__notice{margin:1.6rem 0 0;padding:.9rem 1.2rem;border-left:4px solid var(--red);background:var(--paper-2);font-size:.95rem;max-width:62ch}
+  .blurb{color:var(--ink-soft)}
+  #month-chart .estbox{color:var(--ink-soft)}
+  #month-chart .tick.est{font-style:italic}
+  .detail{margin-top:2.4rem;border:1px solid var(--rule)}
+  .split{display:grid;grid-template-columns:minmax(200px,340px) minmax(0,1fr);gap:clamp(1.5rem,4vw,3rem);align-items:center}
+  .rcpt--cats{min-width:0}
+  .rcpt--cats .pct{font-family:var(--f-display);font-weight:700;font-size:1.25rem}
+  .rcpt--cats td{vertical-align:top;padding:.95rem 1rem}
+  .rcpt--cats .blurb{font-size:.88rem;line-height:1.4}
+  @media (max-width:820px){.split{grid-template-columns:1fr}#pie{max-width:320px;margin-inline:auto}}
+  .detail summary{cursor:pointer;padding:1rem 1.2rem;font:500 .8rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+  .detail__summary{margin:0 0 1.2rem;padding:.9rem 1.1rem;border-left:4px solid var(--red);background:var(--paper-2);max-width:62ch}
+  .detail__summary p+p{margin-top:.6rem}
+  .detail__body{padding:0 1.2rem 1.2rem}
+  .sumrow{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+  @media (max-width:600px){.rcpt--cats .blurb,.rcpt--cats th:nth-child(3){display:none}}
+  .fin__top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2rem;align-items:start;margin-top:1rem}
+  .fin__top .fin__lede{margin-top:0}
+  .fin__give{border:2px solid var(--ink);padding:1.4rem;text-align:center}
+  .fin__give-title{margin:0 0 .9rem;font:700 .85rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase}
+  .fin__give .btn{width:100%;justify-content:center;background:var(--red);border-color:var(--red);color:#fff}
+  .fin__give .btn:hover{background:var(--ink);border-color:var(--ink)}
+  .fin__give-sub{margin:1rem 0 0;font-size:.95rem;color:var(--ink-soft)}
+  .fin__give-sub a{color:var(--ink);text-decoration:underline;text-underline-offset:3px}
+  @media (max-width:820px){.fin__top{grid-template-columns:1fr;gap:1.2rem}}
+  .fin__note{margin-top:1rem;font-size:.85rem;color:var(--ink-soft);max-width:62ch}
+</style>
+</head>
+<body class="gpage">
+<div class="grain" aria-hidden="true"></div>
+<main class="section fin gpage__main">
+  <a class="arrow" href="index.html#support">&larr; Back to home</a>
+  <h1 class="gpage__title">Funding + finances</h1>
+  <div class="fin__top">
+  <p class="fin__lede">An Olympic campaign is expensive, and I think supporters deserve to see where the money goes. Here&rsquo;s a snapshot of what I&rsquo;ve spent so far this year, month by month and by category. All amounts are in Canadian dollars.</p>
+    <aside class="fin__give">
+      <p class="fin__give-title">Want to support?</p>
+      <a class="btn btn--solid" href="https://www.windathletes.ca/athletes/annalise-balasubramanian#wac-donation" target="_blank" rel="noopener">Donate here <span aria-hidden="true">&nearr;</span></a>
+      <p class="fin__give-sub">Don&rsquo;t hesitate to <a href="index.html#contact">reach out</a> if you have any questions.</p>
+    </aside>
+  </div>
+  <p class="fin__notice" id="notice" hidden></p>
+
+  <h2><span id="budget-title">Spending so far</span> <span class="muted" style="font-weight:400;font-size:.6em">&middot; <span id="period"></span></span></h2>
+  <dl class="sumrow">
+    <div><dt id="sum-total-label">Spent so far</dt><dd id="sum-total"></dd></div>
+    <div><dt>Budget for the year</dt><dd id="sum-budget"></dd></div>
+  </dl>
+
+  <h2>Where it goes</h2>
+  <p class="fin__sub">Share of total spending by category.</p>
+  <div class="split">
+    <div id="pie"></div>
+    <div class="tablewrap">
+      <table class="rcpt rcpt--cats">
+        <thead><tr><th>Category</th><th class="num">Share</th><th>What it covers</th><th class="num" id="summary-est-head">Total</th></tr></thead>
+        <tbody id="summary-rows"></tbody>
+        <tfoot><tr><td colspan="3">Total</td><td class="num" id="summary-total"></td></tr></tfoot>
+      </table>
+    </div>
+  </div>
+
+  <details class="detail" id="detail">
+    <summary>Full expense list example: January, February, June</summary>
+    <div class="detail__body">
+      <div class="tabs" id="example-tabs"></div>
+      <p class="detail__summary" id="example-summary" hidden></p>
+      <div class="tablewrap">
+        <table class="rcpt">
+          <thead><tr><th>Date</th><th>Expense</th><th>Category</th><th class="num">Amount</th></tr></thead>
+          <tbody id="receipt-rows"></tbody>
+          <tfoot><tr><td colspan="3">Month total</td><td class="num" id="example-total"></td></tr></tfoot>
+        </table>
+      </div>
+      <p class="fin__note" id="example-footnote" hidden></p>
+    </div>
+  </details>
+</main>
+<script src="assets/js/finances-data.js"></script>
+<script src="assets/js/finances.js"></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

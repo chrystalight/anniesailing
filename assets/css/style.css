@@ -74,9 +74,10 @@ a{color:inherit}
 
 /* shared type ------------------------------------------------- */
 .label{
-  font:500 .72rem/1 var(--f-mono);
-  letter-spacing:.22em;text-transform:uppercase;
+  font:700 clamp(1.05rem,.8vw + .85rem,1.35rem)/1.2 var(--f-mono);
+  letter-spacing:.16em;text-transform:uppercase;
   color:var(--ink-soft);
+  margin:1.2rem 0 1.8rem;
 }
 .label--light{color:var(--panel-soft)}
 
@@ -96,8 +97,8 @@ a{color:inherit}
 
 .section__head{
   font-family:var(--f-display);
-  font-weight:400;
-  font-size:clamp(1.9rem,4.5vw,3.4rem);
+  font-weight:700;
+  font-size:clamp(2.2rem,5.2vw,4rem);
   line-height:1.05;
   letter-spacing:-.02em;
   margin:.5em 0 .6em;
@@ -137,7 +138,7 @@ a{color:inherit}
   overflow:hidden;
 }
 .hero__media{position:absolute;inset:0;z-index:-1}
-.hero__media img{width:100%;height:100%;object-fit:cover;object-position:60% center}
+.hero__media img{width:100%;height:100%;object-fit:cover;object-position:64% center}
 .hero__media::after{
   content:"";position:absolute;inset:0;
   background:
@@ -146,16 +147,15 @@ a{color:inherit}
 }
 
 .hero__inner{max-width:var(--max);margin-inline:auto;width:100%;color:#F4F1E8}
-.hero .kicker{color:rgba(244,241,232,.82);margin-bottom:.9em}
+.hero .kicker{color:rgba(244,241,232,.95);margin-bottom:.9em;font:700 clamp(1rem,1vw + .8rem,1.45rem)/1.3 var(--f-mono);letter-spacing:.18em}
 .hero__name{
   font-family:var(--f-display);
-  font-weight:300;
-  font-size:clamp(2.9rem,10.5vw,7.2rem);
+  font-weight:700;
+  font-size:clamp(3.2rem,11.5vw,8rem);
   line-height:.92;
   letter-spacing:-.025em;
 }
 .hero__name span{display:block}
-.hero__name span:last-child{font-weight:500;font-style:italic;letter-spacing:-.03em}
 .hero__stand{
   margin:1.4em 0 2em;
   max-width:46ch;
@@ -163,7 +163,7 @@ a{color:inherit}
   color:rgba(244,241,232,.9);
 }
 .hero__cta{display:flex;flex-wrap:wrap;gap:.9em}
-.hero__cta .btn{border-color:rgba(244,241,232,.5);color:#F4F1E8}
+.hero__cta .btn{border:2px solid rgba(244,241,232,.7);color:#F4F1E8;font:700 clamp(.95rem,.5vw + .85rem,1.15rem)/1 var(--f-mono);padding:1.2em 1.8em}
 .hero__cta .btn:hover{background:#F4F1E8;color:var(--ink);border-color:#F4F1E8}
 .hero__cta .btn--solid{background:#F4F1E8;color:var(--ink);border-color:#F4F1E8}
 .hero__cta .btn--solid:hover{background:var(--red);border-color:var(--red);color:#fff}
@@ -191,12 +191,12 @@ a{color:inherit}
   text-decoration:none;white-space:nowrap;
 }
 .index__links{
-  display:flex;gap:1.4rem;overflow-x:auto;scrollbar-width:none;
+  display:flex;gap:1.8rem;overflow-x:auto;scrollbar-width:none;
   -webkit-overflow-scrolling:touch;
 }
 .index__links::-webkit-scrollbar{display:none}
 .index__links a{
-  font:400 .78rem/1 var(--f-mono);letter-spacing:.06em;
+  font:500 1rem/1 var(--f-mono);letter-spacing:.05em;
   text-decoration:none;white-space:nowrap;color:var(--ink-soft);
   padding-bottom:2px;border-bottom:1px solid transparent;
   transition:color .25s,border-color .25s;
@@ -204,6 +204,7 @@ a{color:inherit}
 .index__links a:hover,.index__links a.is-active{color:var(--ink);border-color:var(--red)}
 @media (max-width:720px){
   .index__name{display:none}
+  .index__links{gap:1.3rem}.index__links a{font-size:.9rem}
   .index{justify-content:flex-start}
 }
 
@@ -227,7 +228,7 @@ a{color:inherit}
   display:grid;grid-template-columns:minmax(0,52ch) minmax(0,1fr);
   gap:clamp(1.6rem,5vw,4rem);align-items:stretch;
 }
-.snapshot__photo{width:100%;height:auto;aspect-ratio:1/1;align-self:center;object-fit:cover;object-position:center 6%}
+.snapshot__photo{order:2;width:100%;height:auto;aspect-ratio:1/1;align-self:center;object-fit:cover;object-position:center 6%}
 .facts{border-top:1px solid var(--ink)}
 .facts > div{
   display:grid;grid-template-columns:9rem 1fr;gap:1rem;
@@ -239,9 +240,9 @@ a{color:inherit}
 }
 .facts dd{font-size:.95rem}
 .snapshot__about{margin:1.8rem 0 0;max-width:52ch;line-height:1.65}
-.snapshot__label{display:block;margin-bottom:.35rem;font:500 .78rem/1.5 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red)}
+.snapshot__label{display:block;margin:.6rem 0 1rem;font:700 clamp(1.05rem,.8vw + .85rem,1.35rem)/1.3 var(--f-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red)}
 .snapshot__bio{margin-top:1.1rem;max-width:52ch;line-height:1.65}
-.snapshot__sub{margin:2.2rem 0 0;font-family:var(--f-display);font-weight:400;font-size:clamp(1.4rem,1.6vw + 1rem,1.9rem);letter-spacing:-.02em;line-height:1.15}
+.snapshot__sub{margin:2.2rem 0 0;font-family:var(--f-display);font-weight:700;font-size:clamp(1.6rem,1.8vw + 1.1rem,2.2rem);letter-spacing:-.02em;line-height:1.15}
 .snapshot__bio--tight{margin-top:.7rem}
 .years{display:flex;gap:clamp(.6rem,1.4vw,1rem);margin-top:clamp(2.2rem,4vw,3.2rem);aspect-ratio:3.6;padding-bottom:0}
 .years__item{margin:0;flex:var(--r) 1 0;min-width:0;overflow:hidden;background:var(--panel-soft,#ddd)}
@@ -281,6 +282,7 @@ a{color:inherit}
 .rlist li span{
   font:500 .78rem/1.5 var(--f-mono);letter-spacing:.04em;color:var(--red);
 }
+.rlist__sub{display:block;margin-top:.2rem;font-size:.85em;color:var(--ink-soft)}
 @media (max-width:520px){
   .rlist li{grid-template-columns:1fr;gap:.15rem}
 }
@@ -293,13 +295,13 @@ a{color:inherit}
 }
 .support__inner{max-width:var(--max);margin-inline:auto}
 .support__head{
-  font-family:var(--f-display);font-weight:300;
-  font-size:clamp(2.4rem,6.5vw,5rem);line-height:1;letter-spacing:-.03em;
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(2.7rem,7.2vw,5.6rem);line-height:1;letter-spacing:-.03em;
   margin:.4em 0 .5em;
 }
-.support__head::after{content:".";color:var(--red)}
 .support__body{max-width:52ch;color:var(--panel-soft);font-size:1.08rem;margin:0 0 1em}
 .support__cta{display:flex;flex-wrap:wrap;gap:1em;margin:2.4em 0 1.4em}
+.support__finances{display:flex;justify-content:center;margin:0 0 1.4rem}
 .support__cta .btn--solid{background:var(--red);border-color:var(--red);color:#fff}
 .support__cta .btn--solid:hover{background:#fff;border-color:#fff;color:var(--panel)}
 
@@ -346,6 +348,8 @@ a{color:inherit}
 .sched__ev{display:flex;flex-direction:column;gap:.15rem}
 .sched__e{display:flex;align-items:baseline;gap:.55rem}
 .sched__t{flex:1;min-width:0}
+.sched__sub{display:block;margin-top:.1rem;font-weight:400;font-size:.85em;color:var(--ink-soft);-webkit-text-stroke:0;letter-spacing:0;word-spacing:0}
+.sched__t--peak{font-weight:800;color:var(--ink);-webkit-text-stroke:.35px currentColor;paint-order:stroke fill}
 .sched__d{flex:0 0 auto;font:500 .7rem/1.4 var(--f-mono);letter-spacing:.06em;color:var(--ink-soft);white-space:nowrap}
 .sched__dot{display:inline-block;flex:0 0 auto;width:.8rem;height:.8rem}
 .sched__dot--t{background:#9cc58a;border-radius:50%}
@@ -360,12 +364,22 @@ a{color:inherit}
 .ncard img{display:block;width:100%;aspect-ratio:3/2;object-fit:cover;margin-bottom:1rem;transition:opacity .2s}
 .ncard:hover img{opacity:.88}
 .ncard__meta{font:500 .72rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red);margin:0 0 .5rem}
-.ncard__title{font-family:var(--f-display);font-weight:400;font-size:1.25rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 .6rem}
+.ncard__title{font-family:var(--f-display);font-weight:700;font-size:1.45rem;line-height:1.2;letter-spacing:-.01em;margin:0 0 .6rem}
 .ncard__text{color:var(--ink-soft);font-size:.92rem;line-height:1.55;margin:0 0 1rem}
 .ncard__more{margin-top:auto;font:500 .78rem/1.4 var(--f-mono);letter-spacing:.08em;text-transform:uppercase}
 .ncard:hover .ncard__more{color:var(--red)}
 @media (max-width:900px){.ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.ngrid{grid-template-columns:1fr}}
+/* phones: the smaller news stories become a compact list (no photo or preview) */
+@media (max-width:560px){
+  .ngrid{gap:0;margin-top:1.6rem}
+  .ncard{padding:.95rem 0;border-top:0;border-bottom:1px solid var(--rule)}
+  .ncard:first-child{border-top:1px solid var(--ink)}
+  .ncard img,.ncard__text,.ncard__more{display:none}
+  .ncard__meta{font-size:.68rem;margin:0 0 .3rem}
+  .ncard__title{font-size:1.02rem;line-height:1.3;margin:0;font-weight:600}
+  .ncard__title::after{content:" \2197";color:var(--red);font-family:var(--f-mono);font-size:.85em}
+}
 /* ─────────────── RECENT NEWS (featured) ─────────────── */
 .feature{
   display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
@@ -379,8 +393,8 @@ a{color:inherit}
 .feature__date{font:500 .78rem/1.4 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red)}
 .feature__title{
   margin:.7rem 0 1.1rem;
-  font-family:var(--f-display);font-weight:400;
-  font-size:clamp(1.7rem,2.6vw + 1rem,2.9rem);
+  font-family:var(--f-display);font-weight:700;
+  font-size:clamp(2rem,3vw + 1.1rem,3.3rem);
   line-height:1.12;letter-spacing:-.02em;
 }
 .feature__text{max-width:46ch;color:var(--ink-soft);margin-bottom:1.6rem}
@@ -418,8 +432,8 @@ a{color:inherit}
 .gallery > .arrow{margin-top:1.8rem}
 .gpage__main{padding-top:clamp(40px,6vw,80px);max-width:var(--max);margin:0 auto}
 .gpage__title{
-  margin:1.2rem 0 0;font-family:var(--f-display);font-weight:400;
-  font-size:clamp(2rem,3.2vw + 1rem,3.4rem);letter-spacing:-.02em;line-height:1.1;
+  margin:1.2rem 0 0;font-family:var(--f-display);font-weight:700;
+  font-size:clamp(2.3rem,3.6vw + 1rem,3.9rem);letter-spacing:-.02em;line-height:1.1;
 }
 .gpage__main{max-width:var(--max)}
 .gpage__main .gallery__grid{
@@ -540,4 +554,194 @@ a{color:inherit}
   *,*::before,*::after{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
   .anim,.reveal{opacity:1;transform:none}
   .hero__scroll::after{animation:none}
+}
+
+/* ─────────────── NEWSLETTER BAR ─────────────── */
+.newsbar{
+  display:block;position:relative;z-index:2;
+  background:var(--red);color:#fff;text-decoration:none;
+  padding:clamp(1.1rem,2.6vw,1.7rem) var(--gutter);
+  transition:background .35s ease;
+}
+.newsbar:hover{background:#A3171F}
+.newsbar__inner{display:flex;align-items:center;justify-content:space-between;gap:2rem;max-width:var(--max);margin-inline:auto}
+.newsbar__text{display:block}
+.newsbar__kicker{display:block;font:700 .72rem/1.3 var(--f-mono);letter-spacing:.16em;text-transform:uppercase;opacity:.85;margin-bottom:.4rem}
+.newsbar__title{display:block;font-family:var(--f-display);font-weight:700;font-size:clamp(1.05rem,1.2vw + .8rem,1.5rem);line-height:1.2;letter-spacing:-.01em;max-width:40ch}
+.newsbar__arrow{font-size:clamp(1.4rem,2.4vw,2rem);line-height:1;transition:transform .35s ease}
+.newsbar:hover .newsbar__arrow{transform:translateX(.4rem)}
+
+/* ─────────────── PHONES ONLY (laptop layout untouched) ─────────────── */
+@media (max-width:600px){
+  /* headshot: smaller, with the About me text wrapping around it */
+  .snapshot__grid{display:block}
+  .snapshot__grid::after{content:"";display:block;clear:both}
+  .snapshot__info{display:block}
+  .snapshot__photo{float:right;order:0;width:118px;max-width:none;height:auto;aspect-ratio:2/3;margin:.2rem 0 .6rem 1rem}
+
+  /* support: smaller type, paragraph and "where your donation goes" side by side */
+  .support__grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:.8rem;align-items:start}
+  .support__head{font-size:1.75rem;margin:.3em 0 .45em}
+  .support__body{font-size:.8rem;line-height:1.5;margin:0 0 .8em}
+  .support__cta{gap:.5em;margin:1.2em 0 .8em}
+  .support__cta .btn,.support__finances .btn{font-size:.62rem;padding:.9em 1em;width:100%;justify-content:center;text-align:center}
+  .support__finances{margin:0 0 1rem}
+  .gives{padding:.7rem .7rem .4rem;margin-top:0}
+  .gives__title{font-size:.6rem;margin:0 0 .5rem}
+  .gives__list li{gap:.4rem;padding:.45rem 0}
+  .gives__amt{flex:0 0 2.7rem;font-size:.85rem}
+  .gives__what{font-size:.64rem;line-height:1.35;min-width:0;overflow-wrap:anywhere;hyphens:auto}
+  .gives__list li{min-width:0}
+}
+
+/* phones: keep the big name on one line, and keep Annie fully in the banner */
+@media (max-width:600px){
+  .hero__name{font-size:10.2vw}
+  .hero .kicker{font-size:.86rem;letter-spacing:.12em}
+  /* zoomed out: the photo sits in its own band at the top, sharp, fading into a dark background */
+  .hero{background:#0E0F12;min-height:0;padding-top:calc(82vw - 2.2rem);padding-bottom:2.4rem}
+  .hero__media{bottom:auto;height:82vw}
+  .hero__media img{object-position:72% center}
+  .hero__media::after{background:linear-gradient(180deg,rgba(14,15,18,0) 60%,#0E0F12 100%)}
+}
+
+@media (max-width:600px){.hero{padding-top:calc(82vw - 0.4rem)}}
+
+/* bigger, centred finances button */
+.support__main .support__finances{justify-content:center;margin:1.6rem 0 1.4rem}
+.support__finances .btn{font-size:1.05rem;padding:1.2em 1.8em;text-align:center;justify-content:center;font-weight:700}
+@media (max-width:600px){
+  .support__finances .btn{font-size:.8rem;padding:1.1em 1em;width:100%}
+}
+.support__actions{display:inline-flex;flex-direction:column;align-items:stretch;max-width:100%}
+.support__actions .support__cta{margin-bottom:0}
+.support__actions .support__finances{margin:0 0 1.4rem}
+.support__actions .support__finances .btn{width:100%;font-size:.9rem}
+.support__actions .support__cta{justify-content:center}
+
+/* older news: smaller cards (tablet/laptop only; phones keep the compact list) */
+@media (min-width:561px){
+  .ngrid{grid-template-columns:repeat(4,minmax(0,1fr));gap:1.2rem}
+  .ncard img{aspect-ratio:16/10;margin-bottom:.7rem}
+  .ncard__meta{font-size:.62rem;margin-bottom:.35rem}
+  .ncard__title{font-size:1.05rem;line-height:1.25;margin-bottom:.45rem}
+  .ncard__text{font-size:.8rem;line-height:1.45;margin-bottom:.7rem}
+  .ncard__more{font-size:.68rem}
+}
+@media (min-width:561px) and (max-width:900px){.ngrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+.results__head{margin-bottom:clamp(1.8rem,4vw,3rem)}
+.results__title{font-family:var(--f-display);font-weight:700;font-size:clamp(1.5rem,2vw + .9rem,2.4rem);line-height:1.15;letter-spacing:-.02em;margin:.4rem 0 .6rem;max-width:30ch}
+.results__stats{margin:0;color:var(--red);font:700 clamp(.85rem,.4vw + .75rem,1.05rem)/1.5 var(--f-mono);letter-spacing:.04em}
+.results__head .label{margin:0 0 .4rem}
+.results__title{max-width:none;margin:0 0 .5rem}
+.results__head .label{margin:0 0 .6rem}
+.support__actions .support__cta{margin-bottom:1.1rem}
+.explain__more{margin:1.4rem 0 0}
+.explain__more .btn{background:var(--red);border-color:var(--red);color:#fff}
+.explain__more .btn:hover{background:var(--ink);border-color:var(--ink)}
+.readmore summary{list-style:none;cursor:pointer;display:inline-block;margin:.2rem 0 1rem;font:700 .85rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--red);border-bottom:2px solid var(--red);padding-bottom:3px}
+.readmore summary::-webkit-details-marker{display:none}
+.readmore .readmore__close,.readmore[open] .readmore__open{display:none}
+.readmore[open] .readmore__close{display:inline}
+.readmore[open] summary{margin-bottom:1.2rem}
+
+/* About me + What is ILCA sailing side by side on laptops; stacked on phones/tablets */
+@media (min-width:1000px){
+  .aboutrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,4vw,4rem);align-items:start}
+  .aboutrow .snapshot__grid{display:block}
+  .aboutrow .snapshot__grid::after{content:"";display:block;clear:both}
+  .aboutrow .snapshot__photo{float:right;width:38%;margin:0 0 1rem 1.6rem;aspect-ratio:3/4}
+  .aboutrow .explain{margin-top:0}
+  .aboutrow .explain__video{float:none;width:100%;margin:0 0 1.2rem}
+  .aboutrow .snapshot__about,.aboutrow .snapshot__bio,.aboutrow .explain .snapshot__bio{font-size:.95rem;line-height:1.6;max-width:none}
+  .aboutrow .explain .snapshot__sub{margin-top:.6rem;font-size:clamp(1.4rem,1.2vw + 1rem,1.8rem)}
+}
+
+/* Contact + Latest posts side by side on laptops; stacked on phones/tablets */
+@media (min-width:1000px){
+  .contactrow{position:relative;z-index:2;max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(2rem,5vw,5rem);align-items:start}
+  .contactrow .section{max-width:none;margin:0;padding-inline:0}
+  .contactrow .cform{max-width:none}
+  .contactrow .social__grid{grid-template-columns:minmax(0,1fr);max-width:440px}
+}
+
+/* no box around "Where your donation goes" */
+.gives{border:0}
+
+/* years strip lives under About me; divider between the two halves */
+.aboutrow{display:flex;flex-direction:column}
+.aboutcol{display:contents}
+.aboutcol .years{order:3;margin-top:1.6rem}
+.aboutrow .explain{order:2;margin-top:clamp(2rem,4vw,3rem)}
+@media (min-width:1000px){
+  .aboutrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);column-gap:0;position:relative}
+  .aboutcol{display:block;padding-right:clamp(1.5rem,3vw,3rem)}
+  .aboutcol .years{margin-top:1.6rem;aspect-ratio:3.1;gap:.5rem}
+  .aboutrow .explain{order:0;margin-top:0;padding-left:clamp(1.5rem,3vw,3rem);border-left:2px solid var(--ink)}
+}
+
+/* bigger photo block under About me (laptop): photo 1 on top, photos 2-4 in a row below */
+@media (min-width:1000px){
+  .aboutcol .years{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem;aspect-ratio:auto;margin-top:1.6rem}
+  .aboutcol .years__item{flex:none;aspect-ratio:3/4}
+  .aboutcol .years__item:first-child{grid-column:1 / -1;aspect-ratio:16/8}
+  .aboutcol .years__item:first-child img{object-position:center 30%}
+}
+@media (min-width:1000px){.aboutrow .explain{align-self:stretch}}
+
+/* laptop: photo 1 sits in the text (text wraps beside it), directly above photo 2; photos 2-4 in a row below */
+.years__lead{display:none}
+@media (min-width:1000px){
+  .years__lead{display:block;float:left;width:calc((100% - 1.2rem)/3);margin:.3rem .6rem .6rem 0;aspect-ratio:3/4.3;overflow:hidden}
+  .years__lead img{display:block;width:100%;height:100%;object-fit:cover}
+  .aboutcol .years__item:first-child{display:none}
+  .aboutcol .years{grid-template-columns:repeat(3,minmax(0,1fr));gap:.6rem}
+  .aboutcol .years__item{aspect-ratio:3/4}
+}
+@media (min-width:1000px){.years__lead{clear:right}}
+/* zoom in a little on the two-kids photo (laptop; same crop on phones' first tile) */
+.years__lead img{transform:scale(1.25);transform-origin:50% 40%}
+.years__item:first-child img{transform:scale(1.25);transform-origin:50% 40%}
+/* zoom out the middle photo: give it a wider tile so more of the picture shows */
+@media (min-width:1000px){
+  .aboutcol .years{grid-template-columns:1fr 1.7fr 1fr}
+  .aboutcol .years__item:nth-child(3){aspect-ratio:auto}
+  .aboutcol .years__item:nth-child(3) img{object-position:center 40%}
+}
+@media (min-width:1000px){.aboutcol .years{grid-template-columns:1fr 1.4fr 1fr}}
+/* zoom in a little on the left-hand photo of the row */
+@media (min-width:1000px){.aboutcol .years__item:nth-child(2) img{transform:scale(1.25);transform-origin:50% 40%}}
+
+/* wider About me / What is ILCA sailing on large screens */
+@media (min-width:1000px){
+  .aboutrow{--aw:min(1260px,calc(100vw - 2 * var(--gutter)));width:var(--aw);margin-left:calc(50% - var(--aw) / 2)}
+}
+/* more space either side of the divider between results and schedule */
+@media (min-width:901px){
+  .results__main{padding-right:clamp(2.4rem,5vw,4.5rem)}
+  .results__aside{padding-left:clamp(2.4rem,5vw,4.5rem)}
+}
+
+/* Whimsy Works photo in the About me text: right side, above the last photo of the row (laptop) */
+.about__whimsy{margin:1rem 0}
+.about__whimsy img{display:block;width:100%;height:auto}
+@media (min-width:1000px){
+  .about__whimsy{float:right;clear:right;width:calc((100% - 1.2rem)/3);margin:.4rem 0 .8rem 1.2rem}
+}
+@media (max-width:999px){.about__whimsy{max-width:420px}}
+@media (min-width:1000px){.about__whimsy{width:calc((100% - 1.2rem)/3 + 3.5rem)}}
+@media (max-width:999px){.about__whimsy{max-width:520px}}
+.snapshot__bio a{color:inherit;text-decoration:underline;text-decoration-color:var(--red);text-underline-offset:3px}
+.snapshot__bio a:hover{color:var(--red)}
+.readmore--about summary{margin-top:.4rem}
+
+/* top menu: slightly smaller links + a red Donate button that stays put while scrolling */
+.index__links a{font-size:.88rem}
+.index__links{min-width:0}
+.index__donate{flex:0 0 auto;margin-left:1.2rem;padding:.7em 1.3em;background:var(--red);border:2px solid var(--red);color:#fff;font:700 .85rem/1 var(--f-mono);letter-spacing:.1em;text-transform:uppercase;text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+.index__donate:hover{background:#fff;color:var(--red)}
+@media (max-width:720px){
+  .index__links a{font-size:.8rem}
+  .index__donate{margin-left:.7rem;padding:.65em 1em;font-size:.72rem}
 }

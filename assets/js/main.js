@@ -128,3 +128,33 @@
     }, { threshold: 0.35 }).observe(v);
   } else { play(); }
 })();
+
+/* click any standalone photo (headshot, "through the years", moments, feature news) to enlarge it */
+(function () {
+  var sel = '.snapshot__photo, .years img, .years__lead img, .moments img, .feature__media img, .about__whimsy img';
+  var imgs = Array.prototype.slice.call(document.querySelectorAll(sel)).filter(function (im) { return !im.closest('a'); });
+  if (!imgs.length) return;
+  var ov = document.createElement('div');
+  ov.className = 'lightbox';
+  ov.hidden = true;
+  ov.setAttribute('role', 'dialog');
+  ov.setAttribute('aria-modal', 'true');
+  ov.setAttribute('aria-label', 'Photo viewer');
+  ov.innerHTML = '<button class="lightbox__close" type="button" aria-label="Close">&times;</button><figure class="lightbox__fig"><img alt=""><figcaption></figcaption></figure>';
+  document.body.appendChild(ov);
+  var big = ov.querySelector('img'), cap = ov.querySelector('figcaption');
+  var close = function () { ov.hidden = true; document.body.style.overflow = ''; big.removeAttribute('src'); };
+  imgs.forEach(function (im) {
+    im.style.cursor = 'zoom-in';
+    im.addEventListener('click', function () {
+      big.src = im.currentSrc || im.src;
+      big.alt = im.alt;
+      var fc = im.closest('figure') && im.closest('figure').querySelector('figcaption');
+      cap.textContent = fc ? fc.textContent : '';
+      ov.hidden = false;
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  ov.addEventListener('click', function (e) { if (e.target === ov || e.target.className === 'lightbox__close') close(); });
+  document.addEventListener('keydown', function (e) { if (!ov.hidden && e.key === 'Escape') close(); });
+})();
