@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="color-scheme" content="only light">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Funding + Finances — Annie Balasubramanian</title>
 <meta name="description" content="Where the money goes: Annie Balasubramanian's campaign spending so far, by category, with an example expense list.">
@@ -74,6 +75,21 @@
   .detail__body{padding:0 1.2rem 1.2rem}
   .sumrow{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
   @media (max-width:600px){.rcpt--cats .blurb,.rcpt--cats th:nth-child(3){display:none}}
+  /* phones: pie chart and category table side by side, table kept small */
+  @media (max-width:600px){
+    .split{grid-template-columns:34% minmax(0,1fr);gap:.7rem;align-items:center}
+    table.rcpt.rcpt--cats{min-width:0;width:100%}
+    .rcpt--cats thead th:nth-child(2),.rcpt--cats tbody td:nth-child(2){display:none}
+    .rcpt--cats th,.rcpt--cats td{word-break:normal;overflow-wrap:normal}
+    .rcpt--cats td.num{white-space:nowrap}
+    .rcpt--cats tfoot tr{display:flex;justify-content:space-between;background:var(--paper-2)}
+    .rcpt--cats tfoot td:first-child{flex:1}
+    #pie{max-width:none;margin-inline:0}
+    .rcpt--cats th{font-size:.52rem;letter-spacing:.06em;padding:.45rem .35rem}
+    .rcpt--cats td{font-size:.68rem;padding:.45rem .35rem}
+    .rcpt--cats .pct{font-size:.8rem}
+    .rcpt--cats tfoot td{font-size:.68rem}
+  }
   .fin__top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:2rem;align-items:start;margin-top:1rem}
   .fin__top .fin__lede{margin-top:0}
   .fin__give{border:2px solid var(--ink);padding:1.4rem;text-align:center}
