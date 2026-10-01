@@ -745,3 +745,10 @@ a{color:inherit}
   .index__links a{font-size:.8rem}
   .index__donate{margin-left:.7rem;padding:.65em 1em;font-size:.72rem}
 }
+
+/* phones: the "through the years" photos stay hidden until About me > Read more is opened, then sit right under the About me text */
+@media (max-width:600px){
+  .aboutcol .years{display:none}
+  .aboutrow:has(.readmore--about[open]) .aboutcol .years{display:flex;order:1;margin-top:1.2rem}
+  .aboutrow:has(.readmore--about[open]) .explain{margin-top:2rem}
+}
