@@ -765,3 +765,11 @@ a{color:inherit}
   .nbform{position:relative}
   .nbform__status{position:absolute;left:0;top:100%;margin:.35rem 0 0}
 }
+
+/* Results + schedule: own page on phones */
+.results__phonelink{display:none}
+.rpage .results{padding:1.2rem 0 0}
+@media (max-width:600px){
+  #results .results__split,#results .results__main{display:none}
+  #results .results__phonelink{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;padding:.85rem 1.3rem;background:var(--red);color:#fff;font:700 .85rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px}
+}

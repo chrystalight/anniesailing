@@ -3,4 +3,5 @@
   <url><loc>https://anniesailing.ca/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://anniesailing.ca/gallery.html</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://anniesailing.ca/finances.html</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
+  <url><loc>https://anniesailing.ca/results.html</loc></url>
 </urlset>

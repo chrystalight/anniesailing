@@ -158,3 +158,12 @@
   ov.addEventListener('click', function (e) { if (e.target === ov || e.target.className === 'lightbox__close') close(); });
   document.addEventListener('keydown', function (e) { if (!ov.hidden && e.key === 'Escape') close(); });
 })();
+
+/* On phones, the Results menu link opens the results page */
+(function(){
+  try{
+    if(!window.matchMedia('(max-width:600px)').matches)return;
+    var a=document.querySelector('.index__links a[href="#results"]');
+    if(a)a.setAttribute('href','results.html');
+  }catch(e){}
+})();
