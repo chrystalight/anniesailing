@@ -773,3 +773,9 @@ a{color:inherit}
   #results .results__split,#results .results__main{display:none}
   #results .results__phonelink{display:inline-flex;align-items:center;gap:.5rem;margin-top:1.2rem;padding:.85rem 1.3rem;background:var(--red);color:#fff;font:700 .85rem/1 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:2px}
 }
+
+/* phone: drop the donation box so its bottom lines up with the bottom of the left column */
+@media (max-width:600px){
+  .support__grid{align-items:end}
+  .support__grid .gives{margin-bottom:1.4rem}
+}
