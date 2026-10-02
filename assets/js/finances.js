@@ -168,7 +168,7 @@
   // ---- optional full detail with receipts
   (function () {
     var exs = F.examples || [];
-    if (!exs.length) { el("detail").hidden = true; return; }
+    if (!exs.length || !el("detail")) return;
     var tabs = el("example-tabs"), tb = el("receipt-rows");
     function show(i) {
       var ex = exs[i], tot = 0;
