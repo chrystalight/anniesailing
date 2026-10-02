@@ -78,7 +78,7 @@
 
   /* gallery lightbox */
   var lb = document.getElementById('lightbox');
-  var items = Array.prototype.slice.call(document.querySelectorAll('.gallery__item'));
+  var items = Array.prototype.slice.call(document.querySelectorAll('.gallery__item')).filter(function (el) { return el.offsetParent !== null; });
   if (lb && items.length) {
     var lbImg = lb.querySelector('img'), lbCap = lb.querySelector('figcaption');
     var cur = 0, lastFocus = null;

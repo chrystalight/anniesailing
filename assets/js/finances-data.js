@@ -129,7 +129,7 @@ window.FINANCES = {
     "Food": "Groceries and meals on the road",
     "Equipment": "Sails, charter boats and gear",
     "Registration": "Regatta entry fees and registrations",
-    "Physio/gym": "Physio, massage and gym",
+    "Physio/gym": "Physio appointments, gym memberships",
     "Other": "Supplies and everyday extras"
   },
   "months": [
