@@ -746,3 +746,20 @@ a{color:inherit}
 .gives__tax strong{color:var(--panel-text)}
 .gives__tax a{color:var(--panel-text);text-decoration:underline;text-underline-offset:3px}
 @media (max-width:600px){.gives__tax{font-size:.62rem;line-height:1.4;margin-top:.7rem;padding-top:.6rem}}
+
+/* newsletter signup inside the red banner */
+.newsbar__inner--form{flex-wrap:wrap}
+.nbform{flex:1 1 360px;max-width:560px}
+.nbform__row{display:flex;gap:.6rem;flex-wrap:wrap}
+.nbform input[type=text],.nbform input[type=email]{flex:1 1 140px;min-width:0;padding:.85em 1em;border:2px solid #fff;background:#fff;color:#15161A;font:500 .95rem/1.2 var(--f-body,inherit);border-radius:0}
+.nbform input::placeholder{color:#777}
+.nbform button{flex:0 0 auto;padding:.85em 1.4em;border:2px solid #15161A;background:#15161A;color:#fff;font:700 .78rem/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;cursor:pointer}
+.nbform button:hover{background:#fff;color:#15161A;border-color:#fff}
+.nbform__status{margin:.6rem 0 0;min-height:1.2em;font:500 .8rem/1.4 var(--f-mono);color:#fff}
+@media (max-width:600px){.nbform{flex-basis:100%;margin-top:.8rem}.nbform input[type=text],.nbform input[type=email]{font-size:.85rem}}
+/* keep the signup row vertically centred with the banner text; status message floats below */
+@media (min-width:601px){
+  .newsbar__inner--form{align-items:center}
+  .nbform{position:relative}
+  .nbform__status{position:absolute;left:0;top:100%;margin:.35rem 0 0}
+}
