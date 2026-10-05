@@ -994,3 +994,16 @@ html.ssearch-open{overflow:hidden}
 .next__sub[open] > summary .next__chev{transform:rotate(180deg)}
 .next__sub > summary .next__chev{width:1.7rem;height:1.7rem;font-size:.8rem}
 @media (min-width:761px){.next__sub > summary{pointer-events:none;cursor:default}.next__sub > summary .next__chev{display:none}}
+
+/* fifth photo under About me: full-width tile on laptop */
+@media (min-width:1000px){
+  .aboutcol .years__item:nth-child(5){grid-column:1 / -1;aspect-ratio:3/2}
+  .aboutcol .years__item:nth-child(5) img{object-position:center 40%}
+}
+
+/* phone: gallery page shows rows of 3 square thumbnails (captions appear when a photo is opened) */
+@media (max-width:720px){
+  .gpage__main .gallery__grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:.3rem;margin-top:1.2rem}
+  .gpage__fig .gallery__item img{aspect-ratio:1/1}
+  .gpage__fig figcaption{display:none}
+}
