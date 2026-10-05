@@ -1007,3 +1007,13 @@ html.ssearch-open{overflow:hidden}
   .gpage__fig .gallery__item img{aspect-ratio:1/1}
   .gpage__fig figcaption{display:none}
 }
+
+/* About me: the three-children photo spans the full width, cropped shorter (bottom cut off) */
+@media (min-width:1000px){
+  .aboutcol .years__item:nth-child(5){width:auto;grid-column:1 / -1;aspect-ratio:2.5/1}
+  .aboutcol .years__item:nth-child(5) img{object-position:center 28%}
+}
+@media (max-width:600px){
+  .aboutcol .years__item:nth-child(5):last-child{flex:0 0 100%;aspect-ratio:3/2;margin:0}
+  .aboutcol .years__item:nth-child(5) img{object-position:center 28%}
+}
