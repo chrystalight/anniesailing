@@ -156,6 +156,51 @@
     </form>
   </span>
 </div>
+<!-- ─────────────── WHAT'S UP NEXT ─────────────── -->
+<section class="upnext" id="up-next">
+  <h2 class="upnext__title reveal">What&rsquo;s up next?</h2>
+  <div class="upnext__grid">
+    <details class="next next--half reveal" open>
+      <summary class="next__title"><span>Sailing</span><span class="next__chev" aria-hidden="true">&darr;</span></summary>
+      <details class="next__sub" open>
+        <summary class="next__subsum"><span>Upcoming regattas</span><span class="next__chev" aria-hidden="true">&darr;</span></summary>
+      <div class="next__item">
+        <p class="next__event"><a href="https://www.sailing.org/2025/03/27/fortaleza-selected-to-host-2027-world-sailing-championships-one-person-events/" target="_blank" rel="noopener">2027 World Sailing Championships &mdash; Fortaleza, Brazil <span aria-hidden="true">&nearr;</span></a></p>
+        <p class="next__when">January 22&ndash;30, 2027</p>
+        <p class="next__body">I qualified for this event through the 2026 Senior World Championships. Fortaleza hosts the one-person events of the 2027 World Sailing Championships, including the women&rsquo;s dinghy (ILCA&nbsp;6), and it&rsquo;s also an Olympic qualifier: 15 country quota places for the LA 2028 Olympic Games are up for grabs.</p>
+      </div>
+      <div class="next__item">
+        <p class="next__event">56 Trofeo SAR Princesa Sofia &mdash; Palma de Mallorca</p>
+        <p class="next__when">March 26 &ndash; April 3, 2027</p>
+        <p class="next__body">This is the individual qualifier for the Pan American Games: the top Canadian sailor goes on to represent Canada at the Pan Am Games. It&rsquo;s held in Palma de Mallorca and is part of the Sailing Grand Slam series. The 2026 Trofeo Princesa Sofia Regatta hosted a total of 62 countries and over 1,000 sailors across all 10 Olympic classes. In my opinion, one of the most exciting events of the year!</p>
+      </div>
+      </details>
+    </details>
+    <details class="next next--half reveal" open>
+      <summary class="next__title"><span>Outside of sailing</span><span class="next__chev" aria-hidden="true">&darr;</span></summary>
+      <div class="next__item">
+        <p class="next__event">Trick or Suite &mdash; Starlight Children&rsquo;s Foundation Canada</p>
+        <p class="next__when">November 7, 2026</p>
+        <p class="next__body">Trick or Suite is one of Starlight Children&rsquo;s Foundation Canada&rsquo;s most special events: a Halloween celebration where seriously ill children leave the hospital and everything behind for an afternoon of magic and fun. For one afternoon, 25+ hotel suites transform into safe, fully accessible, creative rooms, each with its own theme, welcoming kids of all health conditions, abilities and accessibility challenges. <a href="https://whimsyworks.ca/" target="_blank" rel="noopener"><strong>Whimsy Works</strong></a> is organizing a lot of the casting &mdash; my boyfriend and I will be going as Flynn and Rapunzel as part of this event. We are super excited to help bring this magic to life. Stay tuned for photos!</p>
+        <figure class="next__photo"><img src="assets/img/trick-or-suite.jpg" alt="Two costumed Whimsy Works princesses, Rapunzel and Ariel, posing together in a cozy book corner." width="800" height="745" loading="lazy"><figcaption>Rapunzel (me) and Ariel (my sister) at a Back to School Book Bank event this summer.</figcaption></figure>
+      </div>
+    </details>
+  </div>
+</section>
+<script>
+  (function () {
+    try {
+      var mq = window.matchMedia('(max-width:760px)');
+      function sync() {
+        document.querySelectorAll('.upnext details').forEach(function (d) {
+          if (mq.matches) d.removeAttribute('open'); else d.setAttribute('open', '');
+        });
+      }
+      sync();
+      (mq.addEventListener ? mq.addEventListener('change', sync) : mq.addListener(sync));
+    } catch (e) {}
+  })();
+</script>
 <script>
   (function () {
     var form = document.getElementById("nb-form");
@@ -312,19 +357,7 @@
     <li class="reveal"><span>2026</span> Lauderdale OCR — 2nd overall, 1st Female</li>
   </ul>
   <a class="fullbtn reveal" href="full-results.html">Full results <span aria-hidden="true">&rarr;</span></a>
-  <div class="next reveal">
-    <h3 class="next__title">What&rsquo;s up next?</h3>
-    <div class="next__item">
-      <p class="next__event"><a href="https://www.sailing.org/2025/03/27/fortaleza-selected-to-host-2027-world-sailing-championships-one-person-events/" target="_blank" rel="noopener">2027 World Sailing Championships &mdash; Fortaleza, Brazil <span aria-hidden="true">&nearr;</span></a></p>
-      <p class="next__when">January 22&ndash;30, 2027</p>
-      <p class="next__body">I qualified for this event through the 2026 Senior World Championships. Fortaleza hosts the one-person events of the 2027 World Sailing Championships, including the women&rsquo;s dinghy (ILCA&nbsp;6), and it&rsquo;s also an Olympic qualifier: 15 country quota places for the LA 2028 Olympic Games are up for grabs.</p>
-    </div>
-    <div class="next__item">
-      <p class="next__event">56 Trofeo SAR Princesa Sofia &mdash; Palma de Mallorca</p>
-      <p class="next__when">March 26 &ndash; April 3, 2027</p>
-      <p class="next__body">This is the individual qualifier for the Pan American Games: the top Canadian sailor goes on to represent Canada at the Pan Am Games. It&rsquo;s held in Palma de Mallorca and is part of the Sailing Grand Slam series. The 2026 Trofeo Princesa Sofia Regatta hosted a total of 62 countries and over 1,000 sailors across all 10 Olympic classes. In my opinion, one of the most exciting events of the year!</p>
-    </div>
-  </div></div>
+  </div>
     <aside class="results__aside sched reveal" aria-label="2026 schedule snapshot">
       <p class="sched__title">2026 schedule snapshot</p>
       <ul class="sched__legend">
@@ -346,13 +379,18 @@
         <li><span class="sched__stack"><i class="sched__dot sched__dot--t"></i><i class="sched__dot sched__dot--r"></i></span><span class="sched__mo">N</span></li>
         <li><span class="sched__stack"><i class="sched__dot sched__dot--t"></i></span><span class="sched__mo">D</span></li>
       </ul>
-      <ul class="sched__list">
+      <details class="sched__prev">
+        <summary class="sched__more"><span class="sched__more-closed">See previous months</span><span class="sched__more-open">Hide previous months</span> <span aria-hidden="true" class="sched__chev">&darr;</span></summary>
+        <ul class="sched__list sched__list--prev">
         <li><span class="sched__m">Jan</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Training &middot; Fort Lauderdale</span><span class="sched__d">9 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">Lauderdale OCR</span><span class="sched__d">12 days</span></span></span></li>
         <li><span class="sched__m">Feb</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Training &middot; Portugal</span><span class="sched__d">14 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">Vilamoura Grand Prix</span><span class="sched__d">4 days</span></span></span></li>
         <li><span class="sched__m">Mar</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Training &middot; Palma</span><span class="sched__d">10 days</span></span></span></li>
         <li><span class="sched__m">Apr</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">SOF Palma</span><span class="sched__d">6 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Pre-Hy&egrave;res training</span><span class="sched__d">5 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">Hy&egrave;res</span><span class="sched__d">6 days</span></span></span></li>
         <li><span class="sched__m">May</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">RCYC training &middot; Toronto</span><span class="sched__d">17 days</span></span></span></li>
         <li><span class="sched__m">Jun</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Training &middot; Kingston</span><span class="sched__d">15 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">Canadian Championships</span><span class="sched__d">4 days</span></span></span></li>
+        </ul>
+      </details>
+      <ul class="sched__list sched__list--now">
         <li><span class="sched__m">Jul</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--p"></i><span class="sched__t sched__t--peak">North Americans</span><span class="sched__d">4 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">San Pedro OCR Grand Prix</span><span class="sched__d">4 days</span></span></span></li>
         <li><span class="sched__m">Aug</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Worlds prep &amp; training &middot; Halifax</span><span class="sched__d">15 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--t"></i><span class="sched__t">Ireland pre-training</span><span class="sched__d">5 days</span></span></span></li>
         <li><span class="sched__m">Sep</span><span class="sched__ev"><span class="sched__e"><i class="sched__dot sched__dot--r"></i><span class="sched__t">Senior Worlds &middot; Ireland</span><span class="sched__d">6 days</span></span><span class="sched__e"><i class="sched__dot sched__dot--p"></i><span class="sched__t sched__t--peak">Sail Canada Senior Championships/CORK OCR<span class="sched__sub">(2027 Pan Am Games Country Qualifier)</span></span><span class="sched__d">4 days</span></span></span></li>
