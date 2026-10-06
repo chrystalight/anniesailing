@@ -1017,3 +1017,7 @@ html.ssearch-open{overflow:hidden}
   .aboutcol .years__item:nth-child(5):last-child{flex:0 0 100%;aspect-ratio:3/2;margin:0}
   .aboutcol .years__item:nth-child(5) img{object-position:center 28%}
 }
+
+/* phone: "Upcoming regattas" is just a heading, always open (no second dropdown) */
+.next__sub > summary{pointer-events:none;cursor:default}
+.next__sub > summary .next__chev{display:none}

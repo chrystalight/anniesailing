@@ -194,6 +194,7 @@
       var mq = window.matchMedia('(max-width:760px)');
       function sync() {
         document.querySelectorAll('.upnext details').forEach(function (d) {
+          if (d.classList.contains('next__sub')) { d.setAttribute('open', ''); return; }
           if (mq.matches) d.removeAttribute('open'); else d.setAttribute('open', '');
         });
       }
