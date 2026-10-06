@@ -1021,3 +1021,20 @@ html.ssearch-open{overflow:hidden}
 /* phone: "Upcoming regattas" is just a heading, always open (no second dropdown) */
 .next__sub > summary{pointer-events:none;cursor:default}
 .next__sub > summary .next__chev{display:none}
+
+/* "What does my training look like?" sits under the ILCA explainer */
+.training{margin-top:clamp(2rem,3.5vw,3rem)}
+.training .snapshot__sub{margin-top:0}
+.training .snapshot__bio{max-width:none}
+
+
+.training{display:flow-root}
+.training__photo{float:right;width:min(38%,240px);margin:.3rem 0 1rem 1.4rem}
+.training__photo img{display:block;width:100%;height:auto}
+.training__photo figcaption{margin-top:.5rem;font-size:.78rem;line-height:1.4;color:var(--ink-soft)}
+
+/* footer: one wrapping row of links (site sections + Instagram, Facebook, WindAthletes) */
+.footer__links{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.6rem 1.6rem}
+.footer{display:flex;flex-direction:column;align-items:center;gap:1.3rem;text-align:center}
+.footer__fine{align-self:center;text-align:center}
+@media (max-width:600px){.footer__fine{text-align:center}.footer__links{gap:.8rem 1.2rem}}
