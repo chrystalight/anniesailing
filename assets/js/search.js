@@ -1,12 +1,11 @@
-/* Site search — searches the home page, gallery captions, full results and finances.
+/* Site search — searches the home page, gallery captions, full results.
    Reads the live pages, so new content is searchable automatically. */
 (function () {
   'use strict';
   var PAGES = [
     { url: 'index.html', label: '' },
     { url: 'full-results.html', label: 'Full results' },
-    { url: 'gallery.html', label: 'Gallery' },
-    { url: 'finances.html', label: 'Finances' }
+    { url: 'gallery.html', label: 'Gallery' }
   ];
   var SECTION_LABELS = { top: 'Home', support: 'Support', news: 'Recent News', results: 'Results', moments: 'Moments', gallery: 'Gallery', contact: 'Contact', instagram: 'Instagram' };
   var index = null, loading = null;
